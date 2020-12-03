@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<IATA_AIDX_FlightLegNotifRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:date="http://exslt.org/dates-and-times" CodeContext="3" Target="Test" Version="16.1" PrimaryLangID="en-us" TransactionStatusCode="Start" RetransmissionIndicator="false" TimeStamp="2020-11-25T03:24:19Z" TransactionIdentifier="160627465900000046">
+  <Originator CompanyShortName="DL" TravelSector="A" Code="DL" CodeContext="3"/>
+  <FlightLeg>
+    <LegIdentifier>
+      <Airline CodeContext="3">DL</Airline>
+      <FlightNumber>0751</FlightNumber>
+      <OriginDate>2020-11-23</OriginDate>
+      <DepartureAirport CodeContext="3">PDX</DepartureAirport>
+      <ArrivalAirport CodeContext="3">ATL</ArrivalAirport>
+      <RepeatNumber CurrentInd="true">1</RepeatNumber>
+    </LegIdentifier>
+    <LegData>
+      <PlannedArrivalAptHistory CodeContext="3"></PlannedArrivalAptHistory>
+      <ServiceType>PS</ServiceType>
+      <OperationalStatus CodeContext="2005">ACT</OperationalStatus>
+      <CodeShareInfo>
+        <Airline CodeContext="3">VS</Airline>
+        <FlightNumber>2658</FlightNumber>
+      </CodeShareInfo>
+      <CodeShareInfo>
+        <Airline CodeContext="3">AF</Airline>
+        <FlightNumber>2710</FlightNumber>
+      </CodeShareInfo>
+      <CodeShareInfo>
+        <Airline CodeContext="3">KL</Airline>
+        <FlightNumber>5549</FlightNumber>
+      </CodeShareInfo>
+      <AssociatedFlightLegSchedule>
+        <DepartureAirport CodeContext="3">PDX</DepartureAirport>
+        <ArrivalAirport CodeContext="3">ATL</ArrivalAirport>
+      </AssociatedFlightLegSchedule>
+      <AirportResources Usage="Planned">
+        <Resource DepartureOrArrival="Departure">
+          <AircraftTerminal></AircraftTerminal>
+          <PublicTerminal></PublicTerminal>
+          <PassengerGate>D9</PassengerGate>
+        </Resource>
+        <Resource DepartureOrArrival="Arrival">
+          <AircraftTerminal>S</AircraftTerminal>
+          <PublicTerminal>S</PublicTerminal>
+          <PassengerGate>B11</PassengerGate>
+          <BaggageClaimUnit>7</BaggageClaimUnit>
+        </Resource>
+      </AirportResources>
+      <OperationTime CodeContext="9750" TimeType="ACT" OperationQualifier="OFB">2020-11-23T15:56:00Z</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACL" OperationQualifier="OFB">2020-11-23T07:56:00</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="SCT" OperationQualifier="OFB">2020-11-23T16:00:00Z</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="SCL" OperationQualifier="OFB">2020-11-23T08:00:00</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACT" OperationQualifier="TKO">2020-11-23T16:09:00Z</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACL" OperationQualifier="TKO">2020-11-23T08:09:00</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACT" OperationQualifier="TDN">2020-11-23T20:08:00Z</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACL" OperationQualifier="TDN">2020-11-23T15:08:00</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACT" OperationQualifier="ONB">2020-11-23T20:14:00Z</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="ACL" OperationQualifier="ONB">2020-11-23T15:14:00</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="SCT" OperationQualifier="ONB">2020-11-23T20:22:00Z</OperationTime>
+      <OperationTime CodeContext="9750" TimeType="SCL" OperationQualifier="ONB">2020-11-23T15:22:00</OperationTime>
+      <AircraftInfo>
+        <AircraftType>737</AircraftType>
+        <AircraftSubType>739</AircraftSubType>
+        <Registration>N909DN</Registration>
+        <TailNumber>3909</TailNumber>
+      </AircraftInfo>
+      <CabinClass Class="1">
+        <PaxCount Qualifier="70A" Usage="Actual">-1</PaxCount>
+      </CabinClass>
+      <CabinClass Class="2">
+        <PaxCount Qualifier="70A" Usage="Actual">9</PaxCount>
+      </CabinClass>
+      <CabinClass Class="3">
+        <PaxCount Qualifier="70A" Usage="Actual">72</PaxCount>
+      </CabinClass>
+      <CabinClass Class="7">
+        <PaxCount Qualifier="70A" Usage="Actual">80</PaxCount>
+      </CabinClass>
+      <PublicFlightDisplay>
+        <AirlineType CodeContext="3">DL</AirlineType>
+        <FlightNumber>0751</FlightNumber>
+      </PublicFlightDisplay>
+    </LegData>
+  </FlightLeg>
+</IATA_AIDX_FlightLegNotifRQ>

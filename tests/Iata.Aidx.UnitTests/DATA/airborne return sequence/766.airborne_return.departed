@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IATA_AIDX_FlightLegNotifRQ xmlns="http://www.iata.org/IATA/2007/00" xmlns:ba="http://baplc.com/extensionSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" AltLangID="en-us" PrimaryLangID="en-us" Target="Test" Version="15.1" TimeStamp="2015-06-04T14:55:56.24Z" TransactionIdentifier="FLT:NFAM" SequenceNmbr="2169">
+	<Originator CompanyShortName="BA"/>
+	<DeliveringSystem CompanyShortName="BA"/>
+	<FlightLeg>
+		<LegIdentifier>
+			<Airline CodeContext="3">BA</Airline>
+			<FlightNumber>766</FlightNumber>
+			<DepartureAirport CodeContext="3">LHR</DepartureAirport>
+			<ArrivalAirport CodeContext="3">OSL</ArrivalAirport>
+			<OriginDate>2015-06-04</OriginDate>
+			<RepeatNumber>1</RepeatNumber>
+		</LegIdentifier>
+		<LegData>
+			<OperationalStatus RepeatIndex="1" CodeContext="9750">OFB</OperationalStatus>
+			<OperationalStatus RepeatIndex="2" CodeContext="9750">OFB</OperationalStatus>
+			<ServiceType>J</ServiceType>
+			<OwnerAirline>
+				<Airline>BA</Airline>
+			</OwnerAirline>
+			<PlannedArrivalAptHistory CodeContext="3" RepeatIndex="1">OSL</PlannedArrivalAptHistory>
+			<AssociatedFlightLegAircraft RepeatIndex="1">
+				<Airline CodeContext="3">BA</Airline>
+				<FlightNumber>373</FlightNumber>
+				<DepartureAirport CodeContext="3">TLS</DepartureAirport>
+				<ArrivalAirport CodeContext="3">LHR</ArrivalAirport>
+				<OriginDate>2015-06-04</OriginDate>
+				<RepeatNumber>1</RepeatNumber>
+			</AssociatedFlightLegAircraft>
+			<AssociatedFlightLegAircraft RepeatIndex="2">
+				<Airline CodeContext="3">BA</Airline>
+				<FlightNumber>767</FlightNumber>
+				<DepartureAirport CodeContext="3">OSL</DepartureAirport>
+				<ArrivalAirport CodeContext="3">LHR</ArrivalAirport>
+				<OriginDate>2015-06-04</OriginDate>
+			</AssociatedFlightLegAircraft>
+			<AirportResources Usage="Actual">
+				<Resource DepartureOrArrival="Departure">
+					<Runway/>
+					<AircraftTerminal>5</AircraftTerminal>
+					<PublicTerminal RepeatIndex="1">5</PublicTerminal>
+				</Resource>
+				<Resource DepartureOrArrival="Arrival">
+					<Runway/>
+					<AircraftTerminal/>
+					<PublicTerminal RepeatIndex="1"/>
+				</Resource>
+			</AirportResources>
+			<OperationTime CodeContext="9750" RepeatIndex="1" TimeType="TAR" OperationQualifier="SRT" xsi:nil="true"/>
+			<OperationTime CodeContext="9750" RepeatIndex="2" TimeType="SCT" OperationQualifier="OFB">2015-06-04T12:05:00Z</OperationTime>
+			<OperationTime CodeContext="9750" RepeatIndex="3" TimeType="ACT" OperationQualifier="OFB">2015-06-04T12:05:00Z</OperationTime>
+			<OperationTime CodeContext="9750" RepeatIndex="4" TimeType="CAL" OperationQualifier="TKO">2015-06-04T12:25:00Z</OperationTime>
+			<OperationTime CodeContext="9750" RepeatIndex="5" TimeType="TAR" OperationQualifier="TKO" xsi:nil="true"/>
+			<OperationTime CodeContext="9750" RepeatIndex="6" TimeType="ACT" OperationQualifier="TKO" xsi:nil="true"/>
+			<OperationTime CodeContext="9750" RepeatIndex="7" TimeType="ACT" OperationQualifier="TDN" xsi:nil="true"/>
+			<OperationTime CodeContext="9750" RepeatIndex="8" TimeType="SCT" OperationQualifier="ONB">2015-06-04T14:15:00Z</OperationTime>
+			<OperationTime CodeContext="9750" RepeatIndex="9" TimeType="CAL" OperationQualifier="ONB">2015-06-04T14:15:00Z</OperationTime>
+			<AircraftInfo>
+				<AircraftType>319</AircraftType>
+				<Registration>GEUPY</Registration>
+			</AircraftInfo>
+		</LegData>
+		<TPA_Extension>
+			<ba:FlightCrewAirline CodeContext="3">BA</ba:FlightCrewAirline>
+			<ba:CabinCrewAirline CodeContext="3">BA</ba:CabinCrewAirline>
+			<ba:AirborneRepeatNumber>1</ba:AirborneRepeatNumber>
+			<ba:AirborneReturnNumber>-</ba:AirborneReturnNumber>
+			<ba:AirborneSlotStatus>A</ba:AirborneSlotStatus>
+		</TPA_Extension>
+	</FlightLeg>
+</IATA_AIDX_FlightLegNotifRQ>
