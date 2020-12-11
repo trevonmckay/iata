@@ -12,7 +12,10 @@ namespace IATA.AIDX
         public string ServiceType { get; set; }
 
         [XmlElement]
-        public FlightOperationalStatus OperationalStatus { get; set; }
+        public List<string> PlannedArrivalAptHistory { get; set; }
+
+        [XmlElement]
+        public List<FlightOperationalStatus> OperationalStatus { get; set; }
 
         [XmlElement]
         public List<CodeShareInfo> CodeShareInfo { get; set; }
@@ -28,5 +31,14 @@ namespace IATA.AIDX
 
         [XmlElement]
         public PublicFlightDisplay PublicFlightDisplay { get; set; }
+
+        [XmlElement]
+        public OwnerAirline OwnerAirline { get; set; }
+
+        [XmlElement]
+        public AirportResources AirportResources { get; set; }
+
+        [XmlElement]
+        public List<FlightLegIdentifier> AssociatedFlightLegAircraft { get; set; }
     }
 }

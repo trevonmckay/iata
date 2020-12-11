@@ -9,6 +9,7 @@ namespace IATA.AIDX
     {
         public string Usage { get; set; }
 
+        [XmlElement]
         public ICollection<IAirportResource> Resource { get; set; }
 
         public XmlSchema GetSchema()

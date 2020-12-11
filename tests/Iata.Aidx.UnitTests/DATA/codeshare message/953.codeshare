@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<IATA_AIDX_FlightLegNotifRQ xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ba="http://baplc.com/extensionSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:thread="java:java.lang.Thread" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns="http://www.iata.org/IATA/2007/00" AltLangID="en-us" PrimaryLangID="en-us" Target="Test" Version="15.1" TimeStamp="2015-06-05T01:55:04.223Z" TransactionIdentifier="CSH">
+<IATA_AIDX_FlightLegNotifRQ xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:ba="http://baplc.com/extensionSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:thread="java:java.lang.Thread" 
+	xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+	xmlns="http://www.iata.org/IATA/2007/00" 
+	AltLangID="en-us" 
+	PrimaryLangID="en-us" 
+	Target="Test" 
+	Version="15.1" 
+	TimeStamp="2015-06-05T01:55:04.223Z" 
+	TransactionIdentifier="CSH">
 	<Originator CompanyShortName="BA"/>
 	<DeliveringSystem CompanyShortName="BA"/>
 	<FlightLeg>

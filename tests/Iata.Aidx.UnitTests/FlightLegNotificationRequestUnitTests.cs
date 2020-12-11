@@ -1,4 +1,5 @@
 using IATA.AIDX;
+using IATA.AIDX.CustomXmlReader;
 using System;
 using System.IO;
 using System.Xml.Serialization;
@@ -9,16 +10,16 @@ namespace Iata.Aidx.UnitTests
     public class FlightLegNotificationRequestUnitTests
     {
         [Fact]
-        public void Test1()
+        public void Flight_Leg_Notification_Test()
         {
             // Arrange
             var xmlSerializer = new XmlSerializer(typeof(FlightLegNotificationRequest));
             FlightLegNotificationRequest request;
 
-            // Act
-            using (var sr = new FileStream("DATA/IATA_AIDX_FlightLegNotifRQ.xml", FileMode.Open))
+            // Act        
+            using (var streamReader = new StreamReader("DATA/IATA_AIDX_FlightLegNotifRQ.xml"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(sr);
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
             }
 
             // Assert
@@ -38,6 +39,6 @@ namespace Iata.Aidx.UnitTests
                 item => Assert.Equal("AF", item.Airline),
                 item => Assert.Equal("KL", item.Airline));
             Assert.Equal("737", request.FlightLeg.LegData.AircraftInfo.AircraftType);
-        }
+        }        
     }
 }

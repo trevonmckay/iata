@@ -6,6 +6,8 @@ namespace IATA.AIDX
     {
         public FlightLeg() { }
 
+        public string SpecialAction { get; set; }
+
         public FlightLegIdentifier LegIdentifier { get; set; }
 
         public FlightLegData LegData { get; set; }
