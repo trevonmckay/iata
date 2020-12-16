@@ -23,6 +23,8 @@ namespace Iata.Aidx.UnitTests.Library
      * GetCodeShareMessages
      * GetFlightDeleteMessages
      * 
+     * All this functions return the same data
+     * 
      */
 
     public class FlightLiveTests
@@ -65,7 +67,6 @@ namespace Iata.Aidx.UnitTests.Library
             // Arrange
             // Act
             Action action = () => this._service.ParseDeiceMessage(xml: null);
-
             // Assert
             action.Should().Throw<ArgumentNullException>();
         }
@@ -86,42 +87,22 @@ namespace Iata.Aidx.UnitTests.Library
 
 
 
+        [Theory]
+        [InlineData("DATA/de-ice message/458.dice")]
+        [InlineData("DATA/cancel flight sequence/954.1")]
+        [InlineData("DATA/cancel flight sequence/954.cancel")]
+        [InlineData("DATA/flight delete message/6589.delete")]
+        public void When_FlightXmlMessage_Should_RETURN_FLIGHTLEG(string xmlfile)
+        {
+            // Arrange
+            var streamReader = new StreamReader(xmlfile);
+            // Act
+            FlightLegNotificationRequest deiceMessage = this._service.ParseDeiceMessage(streamReader);
+            // Assert
+            deiceMessage.FlightLeg.Should().NotBeNull();
+            deiceMessage.FlightLeg.LegIdentifier.Should().NotBeNull();
+
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
