@@ -1,4 +1,6 @@
-﻿namespace IATA.AIDX
+﻿using IATA.AIDX.Airport;
+
+namespace IATA.AIDX
 {
     public sealed class DepartureAirportResource : IAirportResource
     {

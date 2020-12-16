@@ -6,6 +6,7 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+
   <ItemGroup>
     <PackageReference Include="Bogus" Version="32.0.2" />
     <PackageReference Include="FluentAssertions" Version="5.10.3" />

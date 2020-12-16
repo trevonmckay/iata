@@ -19,7 +19,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/diversion sequence/175.divert.1"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -61,7 +61,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/diversion sequence/175.divert.airborne"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -103,7 +103,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/diversion sequence/175.divert.continuation"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -145,7 +145,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/diversion sequence/175.divert.different_destination"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert

@@ -19,7 +19,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/cancel flight sequence/954.1"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -53,7 +53,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/cancel flight sequence/954.cancel"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert

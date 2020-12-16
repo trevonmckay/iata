@@ -19,7 +19,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/pre departure diversion sequence/107.pre_dep_divert.1"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -58,7 +58,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/pre departure diversion sequence/107.pre_dep_divert.continuation"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -100,7 +100,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/pre departure diversion sequence/107.pre_dep_divert.different_destination"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -143,7 +143,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/pre departure diversion sequence/115.pre_dep_divert.no_continue.1"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -185,7 +185,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/pre departure diversion sequence/115.pre_dep_divert.no_continue.different_destination"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert

@@ -19,7 +19,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/normal flight sequence/normal.1484.1"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -61,7 +61,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/normal flight sequence/normal.1484.airborne"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -103,7 +103,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/normal flight sequence/normal.1484.arrival"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -145,7 +145,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/normal flight sequence/normal.1484.departed"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert
@@ -187,7 +187,7 @@ namespace Iata.Aidx.UnitTests
             // Act
             using (var streamReader = new StreamReader("DATA/normal flight sequence/normal.1484.touchdown"))
             {
-                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new CustomXmlReader(streamReader));
+                request = (FlightLegNotificationRequest)xmlSerializer.Deserialize(new FlightXmlReader(streamReader));
             }
 
             // Assert

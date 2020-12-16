@@ -1,4 +1,4 @@
-﻿namespace IATA.AIDX
+﻿namespace IATA.AIDX.Airport
 {
     public sealed class ArrivalAirportResource : IAirportResource
     {

@@ -1,4 +1,5 @@
-﻿using IATA.AIDX.FlightStatusQualifier;
+﻿using IATA.AIDX.Airport;
+using IATA.AIDX.FlightStatusQualifier;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
