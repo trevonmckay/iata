@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using System.Xml;
 
-namespace IATA.AIDX.FlightLiveReader
+namespace IATA.AIDX.AIDXMessageManager
 {
 
 
-    public interface IFlightLiveParser
+    public interface IAIDXMessageManager
     {
         FlightLegNotificationRequest ParseXMLMessage(XmlDocument xml);
         FlightLegNotificationRequest ParseXMLMessage(StreamReader streamReader);

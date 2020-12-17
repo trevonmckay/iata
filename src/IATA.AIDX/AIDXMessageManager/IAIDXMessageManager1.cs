@@ -2,10 +2,9 @@
 using System;
 using System.IO;
 using System.Xml;
-using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace IATA.AIDX.FlightLiveReader
+namespace IATA.AIDX.AIDXMessageManager
 {
     /// <summary>
     /// 1. Receive FlightLegNotifRQ
@@ -22,10 +21,10 @@ namespace IATA.AIDX.FlightLiveReader
     /// 4. Send FlightLegNotifRQ (ASYNC)
     /// </summary>
 
-    public class FlightLiveParser : IFlightLiveParser
+    public class AIDXMessageManager : IAIDXMessageManager
     {
         private XmlSerializer _XmlSerializer;
-        public FlightLiveParser()
+        public AIDXMessageManager()
         {
             Type type = typeof(FlightLegNotificationRequest);
             this._XmlSerializer = new XmlSerializer(type);
@@ -60,6 +59,6 @@ namespace IATA.AIDX.FlightLiveReader
                 throw new Exception();
             }
 
-        }       
+        }
     }
 }

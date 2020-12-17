@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using IATA.AIDX;
-using IATA.AIDX.FlightLiveReader;
+using IATA.AIDX.AIDXMessageManager;
 using System;
 using System.IO;
 using System.Xml;
@@ -29,10 +29,10 @@ namespace Iata.Aidx.UnitTests.Library
 
     public class FlightLiveTests
     {
-        private readonly IFlightLiveParser _service;
+        private readonly IAIDXMessageManager _service;
         public FlightLiveTests()
         {
-            _service = new FlightLiveParser();
+            _service = new AIDXMessageManager();
         }
 
 
