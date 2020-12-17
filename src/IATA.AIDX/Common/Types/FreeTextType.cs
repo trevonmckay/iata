@@ -1,8 +1,11 @@
-﻿namespace IATA.AIDX.Common.Types
+﻿using IATA.AIDX.Common.Types.Error;
+using IATA.AIDX.Common.Types.Warning;
+
+namespace IATA.AIDX.Common.Types
 {
 
-/// <remarks/>
-[System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType))]
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType))]
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType))]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]

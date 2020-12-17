@@ -11,6 +11,8 @@
 using IATA.AIDX.Common.FlightLegRS;
 using IATA.AIDX.Common.FlightLegTypes;
 using IATA.AIDX.Common.Types;
+using IATA.AIDX.Common.Types.Error;
+using IATA.AIDX.Common.Types.Warning;
 using System;
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]

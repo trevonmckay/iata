@@ -1,4 +1,6 @@
 ﻿using IATA.AIDX.Common.Types;
+using IATA.AIDX.Common.Types.BaggageLoad;
+using IATA.AIDX.Common.Types.Fuel;
 
 namespace IATA.AIDX.Common.FlightLegTypes
 {

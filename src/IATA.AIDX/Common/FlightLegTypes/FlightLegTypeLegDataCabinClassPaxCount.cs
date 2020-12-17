@@ -1,4 +1,5 @@
 ﻿using IATA.AIDX.Common.Types;
+using IATA.AIDX.Common.Types.Location;
 
 namespace IATA.AIDX.Common.FlightLegTypes
 {
