@@ -15,294 +15,300 @@ using IATA.AIDX.Common.Types.Error;
 using IATA.AIDX.Common.Types.Warning;
 using System;
 
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.iata.org/IATA/2007/00", IsNullable = false)]
-public partial class IATA_AIDX_FlightLegRS
+
+namespace IATA.AIDX.Messages
 {
 
-    private object[] itemsField;
-
-    private string echoTokenField;
-
-    private System.DateTime timeStampField;
-
-    private bool timeStampFieldSpecified;
-
-    private IATA_AIDX_FlightLegRSTarget targetField;
-
-    private decimal versionField;
-
-    private string transactionIdentifierField;
-
-    private string sequenceNmbrField;
-
-    private IATA_AIDX_FlightLegRSTransactionStatusCode transactionStatusCodeField;
-
-    private bool transactionStatusCodeFieldSpecified;
-
-    private bool retransmissionIndicatorField;
-
-    private bool retransmissionIndicatorFieldSpecified;
-
-    private string correlationIDField;
-
-    private bool asynchronousAllowedIndField;
-
-    private bool asynchronousAllowedIndFieldSpecified;
-
-    private string codeContextField;
-
-    public IATA_AIDX_FlightLegRS()
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.iata.org/IATA/2007/00", IsNullable = false)]
+    public partial class IATA_AIDX_FlightLegRS
     {
-        this.TargetField = IATA_AIDX_FlightLegRSTarget.Production;
+
+        private object[] itemsField;
+
+        private string echoTokenField;
+
+        private System.DateTime timeStampField;
+
+        private bool timeStampFieldSpecified;
+
+        private IATA_AIDX_FlightLegRSTarget targetField;
+
+        private decimal versionField;
+
+        private string transactionIdentifierField;
+
+        private string sequenceNmbrField;
+
+        private IATA_AIDX_FlightLegRSTransactionStatusCode transactionStatusCodeField;
+
+        private bool transactionStatusCodeFieldSpecified;
+
+        private bool retransmissionIndicatorField;
+
+        private bool retransmissionIndicatorFieldSpecified;
+
+        private string correlationIDField;
+
+        private bool asynchronousAllowedIndField;
+
+        private bool asynchronousAllowedIndFieldSpecified;
+
+        private string codeContextField;
+
+        public IATA_AIDX_FlightLegRS()
+        {
+            this.TargetField = IATA_AIDX_FlightLegRSTarget.Production;
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Errors", typeof(ErrorsType))]
+        [System.Xml.Serialization.XmlElementAttribute("FlightLeg", typeof(FlightLegType))]
+        [System.Xml.Serialization.XmlElementAttribute("Success", typeof(SuccessType))]
+        [System.Xml.Serialization.XmlElementAttribute("Warnings", typeof(WarningsType))]
+        public object[] Items
+        {
+            get
+            {
+                return this.ItemsField;
+            }
+            set
+            {
+                this.ItemsField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string EchoToken
+        {
+            get
+            {
+                return this.EchoTokenField;
+            }
+            set
+            {
+                this.EchoTokenField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime TimeStamp
+        {
+            get
+            {
+                return this.TimeStampField;
+            }
+            set
+            {
+                this.TimeStampField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TimeStampSpecified
+        {
+            get
+            {
+                return this.TimeStampFieldSpecified;
+            }
+            set
+            {
+                this.TimeStampFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(IATA_AIDX_FlightLegRSTarget.Production)]
+        public IATA_AIDX_FlightLegRSTarget Target
+        {
+            get
+            {
+                return this.TargetField;
+            }
+            set
+            {
+                this.TargetField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public decimal Version
+        {
+            get
+            {
+                return this.VersionField;
+            }
+            set
+            {
+                this.VersionField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TransactionIdentifier
+        {
+            get
+            {
+                return this.TransactionIdentifierField;
+            }
+            set
+            {
+                this.TransactionIdentifierField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        public string SequenceNmbr
+        {
+            get
+            {
+                return this.SequenceNmbrField;
+            }
+            set
+            {
+                this.SequenceNmbrField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public IATA_AIDX_FlightLegRSTransactionStatusCode TransactionStatusCode
+        {
+            get
+            {
+                return this.TransactionStatusCodeField;
+            }
+            set
+            {
+                this.TransactionStatusCodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TransactionStatusCodeSpecified
+        {
+            get
+            {
+                return this.TransactionStatusCodeFieldSpecified;
+            }
+            set
+            {
+                this.TransactionStatusCodeFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool RetransmissionIndicator
+        {
+            get
+            {
+                return this.RetransmissionIndicatorField;
+            }
+            set
+            {
+                this.RetransmissionIndicatorField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RetransmissionIndicatorSpecified
+        {
+            get
+            {
+                return this.RetransmissionIndicatorFieldSpecified;
+            }
+            set
+            {
+                this.RetransmissionIndicatorFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CorrelationID
+        {
+            get
+            {
+                return this.CorrelationIDField;
+            }
+            set
+            {
+                this.CorrelationIDField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool AsynchronousAllowedInd
+        {
+            get
+            {
+                return this.AsynchronousAllowedIndField;
+            }
+            set
+            {
+                this.AsynchronousAllowedIndField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AsynchronousAllowedIndSpecified
+        {
+            get
+            {
+                return this.AsynchronousAllowedIndFieldSpecified;
+            }
+            set
+            {
+                this.AsynchronousAllowedIndFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CodeContext
+        {
+            get
+            {
+                return this.CodeContextField;
+            }
+            set
+            {
+                this.CodeContextField = value;
+            }
+        }
+
+        public object[] ItemsField { get => itemsField; set => itemsField = value; }
+        public string EchoTokenField { get => echoTokenField; set => echoTokenField = value; }
+        public DateTime TimeStampField { get => timeStampField; set => timeStampField = value; }
+        public bool TimeStampFieldSpecified { get => timeStampFieldSpecified; set => timeStampFieldSpecified = value; }
+        public IATA_AIDX_FlightLegRSTarget TargetField { get => targetField; set => targetField = value; }
+        public decimal VersionField { get => versionField; set => versionField = value; }
+        public string TransactionIdentifierField { get => transactionIdentifierField; set => transactionIdentifierField = value; }
+        public string SequenceNmbrField { get => sequenceNmbrField; set => sequenceNmbrField = value; }
+        public IATA_AIDX_FlightLegRSTransactionStatusCode TransactionStatusCodeField { get => transactionStatusCodeField; set => transactionStatusCodeField = value; }
+        public bool TransactionStatusCodeFieldSpecified { get => transactionStatusCodeFieldSpecified; set => transactionStatusCodeFieldSpecified = value; }
+        public bool RetransmissionIndicatorField { get => retransmissionIndicatorField; set => retransmissionIndicatorField = value; }
+        public bool RetransmissionIndicatorFieldSpecified { get => retransmissionIndicatorFieldSpecified; set => retransmissionIndicatorFieldSpecified = value; }
+        public string CorrelationIDField { get => correlationIDField; set => correlationIDField = value; }
+        public bool AsynchronousAllowedIndField { get => asynchronousAllowedIndField; set => asynchronousAllowedIndField = value; }
+        public bool AsynchronousAllowedIndFieldSpecified { get => asynchronousAllowedIndFieldSpecified; set => asynchronousAllowedIndFieldSpecified = value; }
+        public string CodeContextField { get => codeContextField; set => codeContextField = value; }
     }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Errors", typeof(ErrorsType))]
-    [System.Xml.Serialization.XmlElementAttribute("FlightLeg", typeof(FlightLegType))]
-    [System.Xml.Serialization.XmlElementAttribute("Success", typeof(SuccessType))]
-    [System.Xml.Serialization.XmlElementAttribute("Warnings", typeof(WarningsType))]
-    public object[] Items
-    {
-        get
-        {
-            return this.ItemsField;
-        }
-        set
-        {
-            this.ItemsField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string EchoToken
-    {
-        get
-        {
-            return this.EchoTokenField;
-        }
-        set
-        {
-            this.EchoTokenField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public System.DateTime TimeStamp
-    {
-        get
-        {
-            return this.TimeStampField;
-        }
-        set
-        {
-            this.TimeStampField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool TimeStampSpecified
-    {
-        get
-        {
-            return this.TimeStampFieldSpecified;
-        }
-        set
-        {
-            this.TimeStampFieldSpecified = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    [System.ComponentModel.DefaultValueAttribute(IATA_AIDX_FlightLegRSTarget.Production)]
-    public IATA_AIDX_FlightLegRSTarget Target
-    {
-        get
-        {
-            return this.TargetField;
-        }
-        set
-        {
-            this.TargetField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal Version
-    {
-        get
-        {
-            return this.VersionField;
-        }
-        set
-        {
-            this.VersionField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string TransactionIdentifier
-    {
-        get
-        {
-            return this.TransactionIdentifierField;
-        }
-        set
-        {
-            this.TransactionIdentifierField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-    public string SequenceNmbr
-    {
-        get
-        {
-            return this.SequenceNmbrField;
-        }
-        set
-        {
-            this.SequenceNmbrField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public IATA_AIDX_FlightLegRSTransactionStatusCode TransactionStatusCode
-    {
-        get
-        {
-            return this.TransactionStatusCodeField;
-        }
-        set
-        {
-            this.TransactionStatusCodeField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool TransactionStatusCodeSpecified
-    {
-        get
-        {
-            return this.TransactionStatusCodeFieldSpecified;
-        }
-        set
-        {
-            this.TransactionStatusCodeFieldSpecified = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool RetransmissionIndicator
-    {
-        get
-        {
-            return this.RetransmissionIndicatorField;
-        }
-        set
-        {
-            this.RetransmissionIndicatorField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool RetransmissionIndicatorSpecified
-    {
-        get
-        {
-            return this.RetransmissionIndicatorFieldSpecified;
-        }
-        set
-        {
-            this.RetransmissionIndicatorFieldSpecified = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string CorrelationID
-    {
-        get
-        {
-            return this.CorrelationIDField;
-        }
-        set
-        {
-            this.CorrelationIDField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool AsynchronousAllowedInd
-    {
-        get
-        {
-            return this.AsynchronousAllowedIndField;
-        }
-        set
-        {
-            this.AsynchronousAllowedIndField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool AsynchronousAllowedIndSpecified
-    {
-        get
-        {
-            return this.AsynchronousAllowedIndFieldSpecified;
-        }
-        set
-        {
-            this.AsynchronousAllowedIndFieldSpecified = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string CodeContext
-    {
-        get
-        {
-            return this.CodeContextField;
-        }
-        set
-        {
-            this.CodeContextField = value;
-        }
-    }
-
-    public object[] ItemsField { get => itemsField; set => itemsField = value; }
-    public string EchoTokenField { get => echoTokenField; set => echoTokenField = value; }
-    public DateTime TimeStampField { get => timeStampField; set => timeStampField = value; }
-    public bool TimeStampFieldSpecified { get => timeStampFieldSpecified; set => timeStampFieldSpecified = value; }
-    public IATA_AIDX_FlightLegRSTarget TargetField { get => targetField; set => targetField = value; }
-    public decimal VersionField { get => versionField; set => versionField = value; }
-    public string TransactionIdentifierField { get => transactionIdentifierField; set => transactionIdentifierField = value; }
-    public string SequenceNmbrField { get => sequenceNmbrField; set => sequenceNmbrField = value; }
-    public IATA_AIDX_FlightLegRSTransactionStatusCode TransactionStatusCodeField { get => transactionStatusCodeField; set => transactionStatusCodeField = value; }
-    public bool TransactionStatusCodeFieldSpecified { get => transactionStatusCodeFieldSpecified; set => transactionStatusCodeFieldSpecified = value; }
-    public bool RetransmissionIndicatorField { get => retransmissionIndicatorField; set => retransmissionIndicatorField = value; }
-    public bool RetransmissionIndicatorFieldSpecified { get => retransmissionIndicatorFieldSpecified; set => retransmissionIndicatorFieldSpecified = value; }
-    public string CorrelationIDField { get => correlationIDField; set => correlationIDField = value; }
-    public bool AsynchronousAllowedIndField { get => asynchronousAllowedIndField; set => asynchronousAllowedIndField = value; }
-    public bool AsynchronousAllowedIndFieldSpecified { get => asynchronousAllowedIndFieldSpecified; set => asynchronousAllowedIndFieldSpecified = value; }
-    public string CodeContextField { get => codeContextField; set => codeContextField = value; }
 }

@@ -24,11 +24,16 @@ namespace IATA.AIDX.AIDXMessageManager
     public class AIDXMessageManager : IAIDXMessageManager
     {
         private XmlSerializer _XmlSerializer;
+        private IAIDXMessageReceiver _receiver;
+
         public AIDXMessageManager()
         {
             Type type = typeof(FlightLegNotificationRequest);
             this._XmlSerializer = new XmlSerializer(type);
         }
+
+
+
 
         public FlightLegNotificationRequest ParseXMLMessage(XmlDocument xml)
         {

@@ -3,8 +3,6 @@ using System.Xml;
 
 namespace IATA.AIDX.AIDXMessageManager
 {
-
-
     public interface IAIDXMessageManager
     {
         FlightLegNotificationRequest ParseXMLMessage(XmlDocument xml);
