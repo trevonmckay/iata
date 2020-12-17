@@ -35,6 +35,11 @@ namespace IATA.AIDX
         [XmlElement]
         public Originator Originator { get; set; }
 
+
+        /// <summary>
+        /// Based on the definition in the document this couuld
+        /// be 1 or more
+        /// </summary>
         [XmlElement]
         public FlightLeg FlightLeg { get; set; }
     }
