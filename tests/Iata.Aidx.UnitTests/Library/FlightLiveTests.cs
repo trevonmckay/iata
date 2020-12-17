@@ -29,10 +29,10 @@ namespace Iata.Aidx.UnitTests.Library
 
     public class FlightLiveTests
     {
-        private readonly IFlightLive _service;
+        private readonly IFlightLiveParser _service;
         public FlightLiveTests()
         {
-            _service = new FlightLive();
+            _service = new FlightLiveParser();
         }
 
 
@@ -42,7 +42,7 @@ namespace Iata.Aidx.UnitTests.Library
             // Arrange
             var xml = new XmlDocument();
             // Act
-            FlightLegNotificationRequest deiceMessage = this._service.ParseDeiceMessage(xml);
+            FlightLegNotificationRequest deiceMessage = this._service.ParseXMLMessage(xml);
             // Assert
             deiceMessage.Should().NotBeNull();
         }
@@ -54,7 +54,7 @@ namespace Iata.Aidx.UnitTests.Library
             // Arrange
             var streamReader = new StreamReader("DATA/de-ice message/458.dice");
             // Act
-            FlightLegNotificationRequest deiceMessage = this._service.ParseDeiceMessage(streamReader);
+            FlightLegNotificationRequest deiceMessage = this._service.ParseXMLMessage(streamReader);
             // Assert
             deiceMessage.Should().NotBeNull();
         }
@@ -66,7 +66,7 @@ namespace Iata.Aidx.UnitTests.Library
         {
             // Arrange
             // Act
-            Action action = () => this._service.ParseDeiceMessage(xml: null);
+            Action action = () => this._service.ParseXMLMessage(xml: null);
             // Assert
             action.Should().Throw<ArgumentNullException>();
         }
@@ -78,7 +78,7 @@ namespace Iata.Aidx.UnitTests.Library
             // Arrange
             var streamReader = new StreamReader("DATA/de-ice message/458.dice");
             // Act
-            FlightLegNotificationRequest deiceMessage = this._service.ParseDeiceMessage(streamReader);
+            FlightLegNotificationRequest deiceMessage = this._service.ParseXMLMessage(streamReader);
             // Assert
             deiceMessage.FlightLeg.Should().NotBeNull();
             deiceMessage.FlightLeg.LegIdentifier.Should().NotBeNull();
@@ -97,7 +97,7 @@ namespace Iata.Aidx.UnitTests.Library
             // Arrange
             var streamReader = new StreamReader(xmlfile);
             // Act
-            FlightLegNotificationRequest deiceMessage = this._service.ParseDeiceMessage(streamReader);
+            FlightLegNotificationRequest deiceMessage = this._service.ParseXMLMessage(streamReader);
             // Assert
             deiceMessage.FlightLeg.Should().NotBeNull();
             deiceMessage.FlightLeg.LegIdentifier.Should().NotBeNull();

@@ -8,16 +8,16 @@ using System.Xml.Serialization;
 namespace IATA.AIDX.FlightLiveReader
 {
 
-    public class FlightLive : IFlightLive
+    public class FlightLiveParser : IFlightLiveParser
     {
         private XmlSerializer _XmlSerializer;
-        public FlightLive()
+        public FlightLiveParser()
         {
             Type type = typeof(FlightLegNotificationRequest);
             this._XmlSerializer = new XmlSerializer(type);
         }
 
-        public FlightLegNotificationRequest ParseDeiceMessage(XmlDocument xml)
+        public FlightLegNotificationRequest ParseXMLMessage(XmlDocument xml)
         {
             if (xml == null)
             {
@@ -28,7 +28,7 @@ namespace IATA.AIDX.FlightLiveReader
         }
 
 
-        public FlightLegNotificationRequest ParseDeiceMessage(StreamReader streamReader)
+        public FlightLegNotificationRequest ParseXMLMessage(StreamReader streamReader)
         {
             try
             {
