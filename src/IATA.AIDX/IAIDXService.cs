@@ -17,6 +17,5 @@ namespace IATA.AIDX
     {
         Task ProcessAIDXMessage(XmlDocument document);
 
-
     }
 }

@@ -4,7 +4,7 @@ namespace IATA.AIDX.AIDXMessageManager
 {
 
 
-    internal interface IAIDXMessageReceiver
+    public interface IAIDXMessageReceiver
     {
         /// <summary>
         /// Receiver receives AIDX message 

@@ -20,6 +20,8 @@ namespace IATA.AIDX.Messages
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.iata.org/IATA/2007/00", IsNullable = false)]
+
+
     public partial class IATA_AIDX_FlightLegNotifRQ : IIATA_AIDX_FlightLegNotifRQ
     {
 
