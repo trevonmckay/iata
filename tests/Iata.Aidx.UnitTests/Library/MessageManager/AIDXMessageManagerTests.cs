@@ -17,7 +17,7 @@ namespace Iata.Aidx.UnitTests.Library.MessageManager
 
         public AIDXMessageManagerTests()
         {
-            var obj = new AIDXMessageManager();
+            var obj = new AIDXManager();
             this._aidxMessageManager = obj;
             this._aidxXMLValidator = obj;
         }
@@ -91,6 +91,7 @@ namespace Iata.Aidx.UnitTests.Library.MessageManager
         [InlineData("DATA/cancel reinstate sequence/217.cancel_reinstate.1")]
         [InlineData("DATA/cancel reinstate sequence/217.cancel_reinstate.cancel")]
         [InlineData("DATA/cancel reinstate sequence/217.cancel_reinstate.reinstate")]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
 
         public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Return_Type(string xmlPath)
         {
@@ -134,7 +135,7 @@ namespace Iata.Aidx.UnitTests.Library.MessageManager
         [InlineData("DATA/cancel flight sequence/954.cancel")]
         [InlineData("DATA/cancel reinstate sequence/217.cancel_reinstate.1")]
         [InlineData("DATA/cancel reinstate sequence/217.cancel_reinstate.cancel")]
-
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
         public void When_AIDXMessageManager_RunValidation_Should_Return_Error_And_Warnings(string xmlPath)
         {
             // Arrange 
@@ -151,5 +152,89 @@ namespace Iata.Aidx.UnitTests.Library.MessageManager
             error.Severity.Should().NotBe(XmlSeverityType.Error);
             error.Message.Should().NotBe("The required attribute 'Name' is missing.");
         }
+
+        [Theory]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
+
+        public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Have_FlightLeg_Count_GreaterThan_0(string xmlPath)
+        {
+            IATA_AIDX_FlightLegNotifRQ message = GetAIDXMessage(xmlPath);
+
+            // Assert
+            message.FlightLeg.Count().Should().BeGreaterThan(0);
+        }
+
+
+        [Theory]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
+        public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Have_FlightLegData(string xmlPath)
+        {
+            IATA_AIDX_FlightLegNotifRQ message = GetAIDXMessage(xmlPath);
+
+            // Assert
+            message.FlightLeg.FirstOrDefault().LegData.Should().NotBeNull();
+            message.FlightLeg.FirstOrDefault().LegData.AircraftInfo.Should().NotBeNull();
+            message.FlightLeg.FirstOrDefault().LegData.CabinClass.Count().Should().Be(4);
+
+        }
+
+        [Theory]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
+        public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Have_FlightLegIdentifier(string xmlPath)
+        {
+            IATA_AIDX_FlightLegNotifRQ message = GetAIDXMessage(xmlPath);
+
+            // Assert
+            message.FlightLeg.FirstOrDefault().Item.Should().NotBeNull();
+        }
+
+        [Theory]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
+        public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Have_FlightLeg_LegData_CodeShareInfo(string xmlPath)
+        {
+            IATA_AIDX_FlightLegNotifRQ message = GetAIDXMessage(xmlPath);
+
+            // Assert
+
+            message.FlightLeg.FirstOrDefault().LegData.CodeShareInfo.Count().Should().BeGreaterThan(0);
+            message.FlightLeg.FirstOrDefault().LegData.CodeShareInfo.Count().Should().Be(3);
+        }
+
+        [Theory]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
+        public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Have_FlightLeg_LegData_AirportResources(string xmlPath)
+        {
+            IATA_AIDX_FlightLegNotifRQ message = GetAIDXMessage(xmlPath);
+
+            // Assert
+            message.FlightLeg.FirstOrDefault().LegData.AirportResources.Count().Should().Be(1);
+            message.FlightLeg.FirstOrDefault().LegData.AirportResources.FirstOrDefault().Resource.Count().Should().Be(2);
+
+        }
+
+        [Theory]
+        [InlineData("DATA/IATA_AIDX_FlightLegNotifRQ.xml")]
+        public void When_AIDXMessageManager_ParseXMLMessage_With_Stream_Should_Have_FlightLeg_LegData_OperationTime(string xmlPath)
+        {
+            IATA_AIDX_FlightLegNotifRQ message = GetAIDXMessage(xmlPath);
+
+            // Assert
+            message.FlightLeg.FirstOrDefault().LegData.OperationTime.Count().Should().BeGreaterThan(0);
+            message.FlightLeg.FirstOrDefault().LegData.OperationTime.Count().Should().Be(12);
+        }
+
+
+
+
+        private IATA_AIDX_FlightLegNotifRQ GetAIDXMessage(string xmlPath)
+        {
+            // Arrange
+            var streamReader = new StreamReader(xmlPath);
+
+            // Act           
+            var message = this._aidxMessageManager.ParseAIDXXMLMessage<IATA_AIDX_FlightLegNotifRQ>(streamReader);
+            return message;
+        }
     }
+
 }

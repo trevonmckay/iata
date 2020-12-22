@@ -24,12 +24,12 @@ namespace IATA.AIDX.AIDXMessageManager
     /// 4. Send FlightLegNotifRQ (ASYNC)
     /// </summary>
 
-    public class AIDXMessageManager : IAIDXMessageManager, IAIDXMessageValidator
+    public class AIDXManager : IAIDXMessageManager, IAIDXMessageValidator
     {
         private readonly XmlReaderSettings _Settings;
         private XmlSerializer _XmlSerializer;
 
-        public AIDXMessageManager()
+        public AIDXManager()
         {
             this._Settings = new XmlReaderSettings();
             ConfigureXMLSettings();
@@ -105,6 +105,8 @@ namespace IATA.AIDX.AIDXMessageManager
 
         internal T Read<T>(StreamReader xmlInputStream) where T : class
         {
+            T returnValue = default(T);
+            Type returnType = typeof(T);
 
             if (xmlInputStream == null)
             {
@@ -112,13 +114,33 @@ namespace IATA.AIDX.AIDXMessageManager
             }
             // create an instance of the XmlSerializer class, 
             // specifying the type of object to be deserialized.
-            XmlRootAttribute xRoot = new XmlRootAttribute();
-            xRoot.ElementName = typeof(T).Name;
-            xRoot.IsNullable = false;
-            XmlSerializer serializer = new XmlSerializer(typeof(T), xRoot);
+            XmlAttributeOverrides attrOverrides = new XmlAttributeOverrides();
+            XmlAttributes attrs = new XmlAttributes();
+            attrs.XmlIgnore = true;
+            //attrs.XmlElements.Add(new XmlElementAttribute("LegData"));
 
-            var reader = new FlightXmlReader(xmlInputStream);
-            return (T)serializer.Deserialize(reader);
+            XmlRootAttribute xRoot = new XmlRootAttribute();
+            xRoot.ElementName = returnType.Name;
+            xRoot.IsNullable = false;
+
+            attrs.XmlRoot = xRoot;
+            //  attrs.XmlElements.Add(new XmlElementAttribute("FlightLeg"));
+
+            attrOverrides.Add(returnType, attrs);
+
+
+            XmlSerializer serializer = new XmlSerializer(returnType, attrOverrides);
+            //XmlSerializer serializer = new XmlSerializer(returnType, attrOverrides, null, xRoot, null);
+            using (var reader = new FlightXmlReader(xmlInputStream))
+            {
+                returnValue = (T)serializer.Deserialize(reader);
+            }
+
+            //XmlValidatingReader vr = new XmlValidatingReader(reader);
+            //vr.Schemas.Add(this._Settings.Schemas);
+            //while (vr.Read()) ;
+
+            return returnValue;
         }
 
 

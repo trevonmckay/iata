@@ -18,7 +18,7 @@ namespace IATA.AIDX.Messages
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
+    // [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.iata.org/IATA/2007/00", IsNullable = false)]
 
 

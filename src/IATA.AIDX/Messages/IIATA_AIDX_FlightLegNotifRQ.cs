@@ -13,6 +13,7 @@ using IATA.AIDX.Common.FlightLegTypes;
 
 namespace IATA.AIDX.Messages
 {
+
     public interface IIATA_AIDX_FlightLegNotifRQ : IAIDX_FlightLegMessage
     {
         string CodeContext { get; set; }

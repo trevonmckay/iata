@@ -32,7 +32,7 @@ namespace Iata.Aidx.UnitTests.Library
         private readonly IAIDXMessageManager _service;
         public FlightLiveTests()
         {
-            _service = new AIDXMessageManager();
+            _service = new AIDXManager();
         }
 
 

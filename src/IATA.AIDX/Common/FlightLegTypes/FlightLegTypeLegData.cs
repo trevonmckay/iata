@@ -1,4 +1,6 @@
-﻿namespace IATA.AIDX.Common.FlightLegTypes
+﻿using System.Xml.Serialization;
+
+namespace IATA.AIDX.Common.FlightLegTypes
 {
 
     /// <remarks/>
@@ -6,7 +8,9 @@
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
+    //[System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = true, Namespace = "http://www.iata.org/IATA/2007/00", TypeName = "LegData")]
+    // [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = true, Namespace = "http://www.iata.org/IATA/2007/00", TypeName = "FlightLeg")]
+    [XmlRoot("LegData")]
     public partial class FlightLegTypeLegData
     {
 
@@ -397,6 +401,7 @@
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AircraftInfo")]
         public FlightLegTypeLegDataAircraftInfo AircraftInfo
         {
             get

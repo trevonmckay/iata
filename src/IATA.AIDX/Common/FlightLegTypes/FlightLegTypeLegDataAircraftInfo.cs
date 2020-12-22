@@ -10,7 +10,6 @@ namespace IATA.AIDX.Common.FlightLegTypes
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iata.org/IATA/2007/00")]
     public partial class FlightLegTypeLegDataAircraftInfo
     {
 

@@ -8,7 +8,6 @@ namespace IATA.AIDX.Common.Types.Fuel
     [System.Serializable()]
     [System.Diagnostics.DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [System.Xml.Serialization.XmlType(Namespace = "http://www.iata.org/IATA/2007/00")]
     public partial class FuelDataType
     {
 

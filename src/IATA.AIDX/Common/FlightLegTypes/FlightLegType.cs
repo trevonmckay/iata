@@ -1,4 +1,5 @@
 ﻿using IATA.AIDX.Common.Types;
+using System.Xml.Serialization;
 
 namespace IATA.AIDX.Common.FlightLegTypes
 {
@@ -8,7 +9,8 @@ namespace IATA.AIDX.Common.FlightLegTypes
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.iata.org/IATA/2007/00")]
+    // [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = true, Namespace = "http://www.iata.org/IATA/2007/00", TypeName = "FlightLeg")]
+    [XmlRoot("FlightLeg")]
     public partial class FlightLegType
     {
 
@@ -66,6 +68,7 @@ namespace IATA.AIDX.Common.FlightLegTypes
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("LegData", typeof(FlightLegTypeLegData))]
         public FlightLegTypeLegData LegData
         {
             get
@@ -79,6 +82,7 @@ namespace IATA.AIDX.Common.FlightLegTypes
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("TPA_Extension")]
         public TPA_ExtensionsType TPA_Extension
         {
             get
