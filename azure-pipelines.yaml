@@ -28,7 +28,7 @@ steps:
     command: pack
     packagesToPack: $(buildProject)
     versioningScheme: 'byBuildNumber'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['PreRelease'], False))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), not(eq(variables['PreRelease'], True)))
 
 - task: DotNetCoreCLI@2
   displayName: 'Create pre-release Nuget package'
